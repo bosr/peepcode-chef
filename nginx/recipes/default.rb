@@ -1,4 +1,4 @@
-package "nginx"
+package "nginx" # apt-get install nginx
 
 service "nginx" do
   supports :status => true, :restart => true, :reload => true
@@ -8,3 +8,4 @@ end
 template "/etc/nginx/nginx.conf" do
   notifies :reload, "service[nginx]"
 end
+

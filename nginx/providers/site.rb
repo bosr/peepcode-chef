@@ -44,6 +44,7 @@ def load_current_resource
   @site = Chef::Resource::NginxSite.new(new_resource.name)
   
   Chef::Log.debug("Checking status of Nginx site #{new_resource.name}")
-  @site.exists(::File.exists?("#{node.nginx.dir}/sites-available/#{new_resource.name}.conf")) 
-  @site.enabled(::File.exists?("#{node.nginx.dir}/sites-enabled/#{new_resource.name}"))
+  @site.exists(::File.exists?("#{node[:nginx][:dir]}/sites-available/#{new_resource.name}.conf")) 
+  @site.enabled(::File.exists?("#{node[:nginx][:dir]}/sites-enabled/#{new_resource.name}"))
 end
+

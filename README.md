@@ -13,5 +13,5 @@ mkdir /etc/chef
 cp /cookbooks/node.json /cookbooks/solo.rb /etc/chef
 apt-get update
 gem update && gem install chef --no-rdoc --no-ri
-chef-solo -j /etc/chef/node.json
+# chef-solo -j /etc/chef/node.json
 
